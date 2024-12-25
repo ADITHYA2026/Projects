@@ -1,0 +1,83 @@
+*
+{
+	background-color: lightcyan;
+	padding: 0;
+	margin: 0;
+	color: black;
+	.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  background-image: url("");
+  background-size: contain;
+}
+body
+{
+	display: grid;
+	height: 100vh;
+	place-items: center;
+	background-color:#D4E7C5;
+	color: BLACK;
+}
+.calc
+{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	border: 5px solid BLACK;
+	box-shadow: 3px 3px 3px BLACK;
+	border-radius: 30px;
+}
+.calc input[type="text"]
+{
+	width: 88%;
+	height: 100px;
+	text-align: right;
+	font-size: 50px;
+	color: BLACK;
+	display: flex;
+	position: relative;
+	top: 10px;
+	border: 5px solid BLACK;
+	margin: auto;
+	border-radius: 50px;
+	padding: 4px 8px;
+	outline: none;
+}
+.buttons input[type='button']
+{
+	width:110px;
+   padding: 10px;
+   margin: 4px 0px;
+   position: relative;
+   left: 20px;
+   right: 50px;
+   top: 20px;
+   height: 60px;
+   cursor: pointer;
+   font-size: 18px;
+   transition: 0.5s;
+   background-color: #294a30;
+   border-radius: 6px;
+   color: BLACK;
+   border:2px solid BLACK;
+   font-size: 25px;
+   text-align: center;
+}
+.buttons input[type='button']:hover
+{
+   background-color: WHITE;
+   color: BLACK;
+}
+h1
+{
+	font-size: 50px;
+	color: BLACK;
+	
+	text-align: center;
+}
+sub
+{
+	font-size: 20px;
+}
