@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CALCULATOR ~ BY ADITYA PRATHI</title>
+	<link rel="stylesheet" type="text/css" href="Calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Monoton&display=swap" rel="stylesheet">
+<script type="text/javascript" src="CALCULATOR.js">
+        function Solve(val) 
+{
+    var v = document.getElementById('result');
+    v.value += val;
+ }
+ function Result()
+ {
+    var num1 = document.getElementById('result').value;
+    var num2 = eval(num1);
+    document.getElementById('result').value = num2;
+ }
+ function Clear()
+ {
+    var inp = document.getElementById('result');
+    inp.value = '';
+ }
+ function Back()
+ {
+    var ev = document.getElementById('result');
+    ev.value = ev.value.slice(0,-1);
+ }
+    </script>
+</head>
+<body>
+    <center><h1>CALCULATOR <sub style="color: BLACK;"></sub></sub> </h1></center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="calc">
+		<input type="text" id='result'>
+		<div class='buttons'>
+		 <input type="button" value="C" onclick="Clear()">
+         <input type="button" value = '%' onclick = "Compute('%')">
+         <input type="button" value = '←' onclick ="Back('←')">
+         <input type="button" value = '/' onclick = "Compute('/')">
+         <br>
+         <input type="button" value = '7' onclick = "Compute('7')">
+         <input type="button" value = '8' onclick = "Compute('8')">
+         <input type="button" value = '9' onclick = "Compute('9')">
+         <input type="button" value = '*' onclick = "Compute('*')">
+         <br>
+         <input type="button" value = '4' onclick = "Compute('4')">
+         <input type="button" value = '5' onclick = "Compute('5')">
+         <input type="button" value = '6' onclick = "Compute('6')">
+         <input type="button" value = '-' onclick = "Compute('-')">
+         <br>
+         <input type="button" value = '1' onclick = "Compute('1')">
+         <input type="button" value = '2' onclick = "Compute('2')">
+         <input type="button" value = '3' onclick = "Compute('3')">
+         <input type="button" value = '+' onclick = "Compute('+')">
+         <br>
+         <input type="button" value = '00'onclick = "Compute('00')">
+         <input type="button" value = '0' onclick = "Compute('0')">
+         <input type="button" value = '.' onclick = "Compute('.')">
+         <input type="button" value = '=' onclick = "Result()">
+		</div>
+	</div>
+</body>
+</html>
