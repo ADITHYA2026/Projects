@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - SPECTRIXO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #222831, #1a1a1a);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+        }
+
+        .form-container h2,
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container h2 {
+            color: #ff4b2b;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-container p {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            color: #ff4b2b;
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            background: #333;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .form-container input[type="file"] {
+            padding: 6px;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .form-container input::placeholder,
+        .form-container textarea::placeholder {
+            color: white; 
+        }
+
+        .form-container input {
+            margin-top: 15px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 14px;
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #3320e1;
+        }
+
+        .form-container .icon-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-container .icon-container i {
+            font-size: 30px;
+            margin: 0 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container .icon-container i:hover {
+            color: #3320e1;
+        }
+
+        .form-container .options-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .form-container .options-container a {
+            color: #ff4b2b;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .form-container .options-container a:hover {
+            color: #ff416c;
+        }
+
+        .footer-icons i {
+            font-size: 30px;
+            color: white; /* Footer icons color white */
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .form-container .options-container a{
+            color: white;
+        }
+
+        .footer-icons i:hover {
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Contact Support</h2>
+        <p>If you have any issues or questions, feel free to reach out to us!</p>
+
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="issue">Select Issue Type</label>
+            <select id="issue" required>
+                <option value="technical">Technical Issue</option>
+                <option value="billing">Billing Question</option>
+                <option value="account">Account Problem</option>
+                <option value="feedback">Feedback</option>
+            </select>
+
+            <label for="message">Describe Your Issue</label>
+            <textarea id="message" placeholder="Describe your issue..." required></textarea>
+
+            <label for="file-upload">Attach File (Optional)</label>
+            <input type="file" id="file-upload">
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="options-container">
+            <a href="faq.html">Go to FAQ</a>
+            <a href="login.html">Back to Login</a>
+        </div>
+
+        <div class="icon-container footer-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+</body>
+</html>
