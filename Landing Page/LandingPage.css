@@ -6,7 +6,7 @@
 }
 
 .main_box {
-    background: url("photo.jpg");
+    background: url("BgImg.jpg");
     height: 100vh;
     background-size: cover;
 }
