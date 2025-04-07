@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adithya Prathi | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aditya Prathi | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
@@ -29,6 +29,7 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
         }
         .hero {
             width: 100%;
@@ -52,7 +53,7 @@
             white-space: nowrap;
             margin-right: 20px;
             margin-left: -85px;
-            padding-left:20px;
+            padding-left: 20px;
             will-change: transform;
             transition: all 0.3s ease;
         }
@@ -63,12 +64,14 @@
         .logo span {
             color: var(--accent-color);
         }
+        .mobile-menu-btn {
+            display: none !important;
+        }
         .nav-links {
             display: flex;
             align-items: center;
             flex-grow: 1;
             justify-content: space-between;
-            margin-left: 0px;
         }
         nav ul {
             display: flex;
@@ -1236,15 +1239,85 @@
             }
         }
         @media (max-width: 992px) {
-            .content {
-                flex-direction: column-reverse;
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px !important;
+                flex-wrap: wrap;
+            }
+            .logo {
+                order: 1;
+                margin-left: 0;
+                font-size: 20px;
+                white-space: nowrap;
+                padding-left: 0;
+                flex: 1;
                 text-align: center;
             }
-            .content-text {
-                padding-right: 0;
-                margin-top: 50px;
+            .nav-links {
+                order: 3;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+            }
+            .resume-btn-container {
+                order: 2;
                 margin-left: 0;
+            }
+            .resume-btn-container .btn {
+                padding: 8px 12px;
+                font-size: 12px;
                 min-width: auto;
+            }
+            nav ul {
+                display: none;
+            }
+            .content {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 20px;
+                padding: 0 15px;
+            }
+            .content-text {
+                padding: 0;
+                min-width: auto;
+                margin-left: 0;
+            }
+            .content h1 {
+                font-size: 28px !important;
+                margin-bottom: 15px;
+                line-height: 1.3;
+                white-space: normal;
+            }
+            .title {
+                font-size: 14px;
+                white-space: normal;
+            }
+            .content-text > div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .content-text .btn {
+                flex: 1;
+                min-width: 120px;
+                max-width: 150px;
+                padding: 10px;
+            }
+            .content-image {
+                order: -1;
+                margin: 0 auto 20px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .content-image img {
+                width: 200px;
+                height: 200px;
             }
             .content p {
                 margin-left: auto;
@@ -1252,9 +1325,6 @@
             }
             .social-icons {
                 justify-content: center;
-            }
-            nav ul {
-                display: none;
             }
             .content-image {
                 margin: 0 auto 30px;
@@ -1270,6 +1340,67 @@
             .content-image img {
                 width: 250px;
                 height: 250px;
+            }
+            nav ul {
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 60%;
+                background: white;
+                padding: 15px;
+                z-index: 1000;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                border-radius: 10px;
+            }
+            nav ul.show {
+                display: flex;
+                transform: translateX(0);
+                left: -20px;
+            }
+            nav ul li {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            nav ul li a {
+                padding: 12px 15px;
+                margin: 5px 0;
+                justify-content: center;
+            }
+            .mobile-menu-btn {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                background: var(--gradient);
+                color: white;
+                border: none;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 1001;
+                margin-left: -15px;
+                margin-top: 5px;
+            }
+            .mobile-menu-btn:hover {
+                transform: scale(1.1);
+            }
+            nav ul.show {
+                display: flex;
+                animation: fadeIn 0.3s ease-in-out;
+                top: 60px;
+            }
+            nav ul.show + .mobile-menu-btn {
+                position: relative;
+                top: auto;
+                right: auto;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
             .content-text {
                 padding-left: 0;
@@ -1327,6 +1458,132 @@
                 font-size: 16px;
             }
         }
+        
+        @media (max-width: 576px) {
+            html {
+                font-size: 14px;
+            }
+            .content h1 {
+                font-size: 24px !important;
+                white-space: normal;
+            }
+            .title {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 0.9rem;
+            }
+            .section-heading .btn {
+                font-size: 1rem;
+            }
+            body {
+                font-size: 14px;
+            }
+            .hero, section {
+                padding: 15px !important;
+            }
+            nav {
+                padding: 10px !important;
+            }
+            .logo {
+                font-size: 18px;
+                order: 2;
+                flex: 1 0 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+            .nav-links {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 5px;
+            }
+            .resume-btn-container {
+                order: 3;
+                margin-left: auto;
+            }
+            .resume-btn-container .btn {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .content {
+                margin-top: 30px;
+            }
+            .content h1 {
+                font-size: 24px !important;
+            }
+            .content-text {
+                padding: 0 !important;
+            }
+            .content-text .btn {
+                min-width: 110px;
+                padding: 8px;
+            }
+            .content-image {
+                margin: 0 auto 20px !important;
+            }
+            .content-image img {
+                width: 200px;
+                height: 200px;
+            }
+            .content-card {
+                padding: 15px !important;
+                margin: 0 0 20px 0 !important;
+            }
+            .projects-container,
+            .certifications-container,
+            .achievements-container {
+                padding: 0 !important;
+            }
+            .education-header h3 {
+                font-size: 16px;
+            }
+            .education-date {
+                font-size: 12px;
+            }
+            .contact-card {
+                padding: 20px 15px !important;
+            }
+            .contact-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 20px !important;
+            }
+            .footer {
+                padding: 20px 0;
+            }
+            .footer-content {
+                padding: 0 15px;
+            }
+            .mobile-menu-btn {
+                order: 1;
+                margin-right: auto;
+            }
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+                display: none;
+                flex-direction: column;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            nav ul li a {
+                justify-content: center;
+                border-radius: 5px;
+                padding: 8px 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1344,7 +1601,7 @@
                     <li><a href="#contact"><i class="fas fa-envelope"></i> CONTACT</a></li>
                 </ul>
                 <div class="resume-btn-container">
-                    <a href="https://drive.google.com/uc?export=download&id=1Qwk4kyHfku6Kn9BshDa2JNqY4MEXGAPA" download class="btn">Download RESUME  <i class="fa-solid fa-download"></i></a>
+                    <a href="https://drive.google.com/uc?export=download&id=1Qwk4kyHfku6Kn9BshDa2JNqY4MEXGAPA" download class="btn">Download RESUME  <i class="fa-solid fa-download"></i></a>
                 </div>
             </div>
         </nav>
@@ -1355,10 +1612,10 @@
             <div class="content-text">
                 <h1>Hello, I'm<span> ADITHYA PRATHI</span></h1>
                 <p>
-                    <span class="title">An&nbsp; Aspiring&nbsp; Software&nbsp; Developer&nbsp; &&nbsp; Cloud&nbsp; Enthusiast</span>
+                    <span class="title">An &nbsp;Aspiring &nbsp;Software &nbsp;Developer &nbsp;& &nbsp;Cloud &nbsp;Enthusiast</span>
                 </p>
                 <div>
-                    <a href="#about" class="btn">About Me</a> 
+                    <a href="#about" class="btn">About Me</a> 
                     <a href="https://drive.google.com/file/d/1Qwk4kyHfku6Kn9BshDa2JNqY4MEXGAPA/view?usp=drive_link" class="btn">View Resume</a>
                 </div>
             </div>
@@ -1379,7 +1636,6 @@
                 I am highly <b>dedicated</b> to improving my <b>problem-solving skills</b> and actively participate in <b>coding challenges</b>  
                 on platforms like <b>LeetCode</b> and <b>GeeksforGeeks</b>. My goal is to continuously enhance my <b>technical expertise</b> and  
                 apply it effectively in <b>software development</b> to build <b>scalable</b> and <b>optimized solutions</b>.
-
             </p>
         </div>
     </section>
@@ -1473,19 +1729,19 @@
                         <ul class="experience-bullets">
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Gained hands-on experience with <strong>20+ AWS services</strong> including EC2, S3, VPC, IAM, and RDS
+                                Gained hands-on experience with 20+ AWS services including EC2, S3, VPC, IAM, RDS and others.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Configured and managed cloud infrastructure with <strong>security best practices</strong>
+                                Configured and managed cloud infrastructure with security best practices.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Automated deployments using <strong>CloudFormation</strong> and monitored systems with <strong>CloudWatch</strong>
+                                Automated deployments using CloudFormation and monitored systems with CloudWatch.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Optimized performance and implemented <strong>networking essentials</strong>
+                                Optimized performance and implemented networking essentials.
                             </li>
                         </ul>
                     </div>
@@ -1511,19 +1767,19 @@
                         <ul class="experience-bullets">
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Built a <strong>sentiment analysis model</strong> with 80% accuracy using Naive Bayes classifier
+                                Built a sentiment analysis model with 80% accuracy using Naive Bayes classifier.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Applied <strong>NLP techniques</strong> including tokenization and TF-IDF on real-time reviews
+                                Applied NLP techniques including tokenization and TF-IDF on real-time reviews.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Utilized Python libraries: <strong>Pandas, NLTK, Word Cloud, and Scikit-learn</strong>
+                                Utilized Python libraries: Pandas, NLTK, Word Cloud, and Scikit-learn.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Evaluated model performance using various <strong>ML metrics</strong>
+                                Evaluated model performance using various ML metrics.
                             </li>
                         </ul>
                     </div>
@@ -1549,15 +1805,15 @@
                         <ul class="experience-bullets">
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Developed a <strong>functional calculator</strong> using HTML, CSS, and JavaScript
+                                Developed a functional calculator using HTML, CSS, and JavaScript.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Designed an <strong>engaging landing page</strong> with responsive design
+                                Designed an engaging landing page with responsive design.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Gained practical experience in <strong>front-end development</strong> and debugging
+                                Gained practical experience in front-end development and debugging.
                             </li>
                         </ul>
                     </div>
@@ -1583,15 +1839,15 @@
                         <ul class="experience-bullets">
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Enhanced skills in <strong>data manipulation and visualization</strong>
+                                Enhanced skills in data manipulation and visualization.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Worked with Python libraries: <strong>Pandas, NumPy, and Matplotlib</strong>
+                                Worked with Python libraries: Pandas, NumPy, and Matplotlib.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Applied <strong>data analysis techniques</strong> on real-world datasets
+                                Applied data analysis techniques on real-world datasets.
                             </li>
                         </ul>
                     </div>
@@ -1929,6 +2185,24 @@
         </div>
         <div class="content-card">
             <div class="certifications-container">
+                <div class="certification-card pearson">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="certification-title">
+                            <p><b>IT Specialist (HTML, CSS)</b></p>
+                            <div class="certification-issuer">
+                                <i class="fas fa-building"></i>
+                                <span>Pearson VUE</span>
+                            </div>
+                            <span class="certification-date">Most Recent</span>
+                        </div>
+                    </div>
+                    <div class="certification-verify">
+                        <a href="https://drive.google.com/file/d/1ioYwt18U5PE0IqY_Afdl68pYQUfX3QYR/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
                 <div class="certification-card aws">
                     <div class="certification-header">
                         <div class="certification-badge">
@@ -1965,22 +2239,22 @@
                         <a href="https://drive.google.com/file/d/198GtPrskRQ3e3nWiz6fCdSu0oBUt_1x3/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="certification-card edx">
+                <div class="certification-card hackerrank">
                     <div class="certification-header">
                         <div class="certification-badge">
-                            <i class="fab fa-java"></i>
+                            <i class="fas fa-database"></i>
                         </div>
                         <div class="certification-title">
-                            <p><b>Java Programming Fundamentals</b></p>
+                            <p><b>SQL Advanced</b></p>
                             <div class="certification-issuer">
                                 <i class="fas fa-building"></i>
-                                <span>edX</span>
+                                <span>HackerRank</span>
                             </div>
-                            <span class="certification-date">2024</span>
+                            <span class="certification-date">2023</span>
                         </div>
                     </div>
                     <div class="certification-verify">
-                        <a href="https://drive.google.com/file/d/1j3tyDRxeYpckxWHEb9V3kdusgyn4hdeY/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://drive.google.com/file/d/1889nIrFBUDEjaaOXVEZnlaTMuS21hp_B/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="certification-card ibm">
@@ -1994,47 +2268,29 @@
                                 <i class="fas fa-building"></i>
                                 <span>IBM</span>
                             </div>
-                            <span class="certification-date">2024</span>
+                            <span class="certification-date">2023</span>
                         </div>
                     </div>
                     <div class="certification-verify">
                         <a href="https://drive.google.com/file/d/14b7JY3UOtJaew3C8EDC0LCLOwZRU5DWx/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="certification-card hackerrank">
+                <div class="certification-card edx">
                     <div class="certification-header">
                         <div class="certification-badge">
-                            <i class="fas fa-database"></i>
+                            <i class="fab fa-java"></i>
                         </div>
                         <div class="certification-title">
-                            <p><b>SQL Advanced</b></p>
+                            <p><b>Java Programming Fundamentals</b></p>
                             <div class="certification-issuer">
                                 <i class="fas fa-building"></i>
-                                <span>HackerRank</span>
+                                <span>edX</span>
                             </div>
-                            <span class="certification-date">2024</span>
+                            <span class="certification-date">2022</span>
                         </div>
                     </div>
                     <div class="certification-verify">
-                        <a href="https://drive.google.com/file/d/1889nIrFBUDEjaaOXVEZnlaTMuS21hp_B/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="certification-card pearson">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="certification-title">
-                            <p><b>IT Specialist (HTML, CSS)</b></p>
-                            <div class="certification-issuer">
-                                <i class="fas fa-building"></i>
-                                <span>Pearson VUE</span>
-                            </div>
-                            <span class="certification-date">2023</span>
-                        </div>
-                    </div>
-                    <div class="certification-verify">
-                        <a href="https://drive.google.com/file/d/1ioYwt18U5PE0IqY_Afdl68pYQUfX3QYR/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://drive.google.com/file/d/1j3tyDRxeYpckxWHEb9V3kdusgyn4hdeY/view?usp=drive_link" class="certification-link">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -2230,6 +2486,29 @@
                 nav.style.padding = '15px 40px';
                 nav.style.backdropFilter = 'none';
             }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.createElement('button');
+            menuBtn.className = 'mobile-menu-btn';
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            document.querySelector('.nav-links').prepend(menuBtn);
+            menuBtn.addEventListener('click', function() {
+                const navUl = document.querySelector('nav ul');
+                navUl.classList.toggle('show');
+                if (navUl.classList.contains('show')) {
+                    menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', function() {
+                    const navUl = document.querySelector('nav ul');
+                    navUl.classList.remove('show');
+                    const menuBtn = document.querySelector('.mobile-menu-btn');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
         });
     </script>
 </body>
