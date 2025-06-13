@@ -896,7 +896,8 @@
             line-height: 1.6;
         }
         .achievement-links {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, auto); 
             gap: 15px;
             margin-top: 20px;
         }
