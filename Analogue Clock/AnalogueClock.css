@@ -48,8 +48,7 @@
 .sizing-box {
     fill: none;
 }
-/* Make all arms rotate around the same center point. */
-/* Optional: Use transition for animation. */
+
 #hour,
 #minute,
 #second {
