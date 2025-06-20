@@ -149,5 +149,3 @@ A polished and professional portfolio website:
    Hamburger menu appears for screens `<768px`
 
 ---
-
-Let me know if you want badges, GitHub deploy buttons, or an image preview section (e.g., screenshots of your portfolio).
