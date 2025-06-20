@@ -1,5 +1,3 @@
-Here’s a professional and well-structured **README.md** format for your **Personal Portfolio** project, ready to be copy-pasted and included in your GitHub repository:
-
 ---
 
 # 🌐 Personal Portfolio
