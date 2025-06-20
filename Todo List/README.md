@@ -57,7 +57,7 @@ A simple yet effective **To-Do List** web app built using **HTML**, **CSS**, and
 
 * **Completed Tasks**:
 
-  * Toggle `complete` class for task strikethrough (⚠️ currently missing `text-decoration: line-through` fix)
+  * Toggle `complete` class for task strikethrough
 
 ---
 
@@ -80,7 +80,7 @@ A simple yet effective **To-Do List** web app built using **HTML**, **CSS**, and
 
 * **Mark Complete**:
 
-  * Click task text → toggles `complete` class (⚠️ CSS fix required)
+  * Click task text → toggles `complete` class 
 
 ---
 
